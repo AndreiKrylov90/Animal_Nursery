@@ -1,0 +1,97 @@
+1. Task: Использование команды cat в Linux
+   - Создать два текстовых файла: "Pets"(Домашние животные) и "Pack animals"(вьючные животные), используя команду `cat` в терминале Linux. В первом файле перечислить собак, кошек и хомяков. Во втором — лошадей, верблюдов и ослов.
+   - Объединить содержимое этих двух файлов в один и просмотреть его содержимое.
+   - Переименовать получившийся файл в "Human Friends"(.
+Пример конечного вывода после команды “ls” :
+Desktop Documents Downloads  HumanFriends.txt  Music  PackAnimals.txt  Pets.txt  Pictures  Videos
+
+Commands:
+root@2040473-cj93593:~# mkdir Animals
+root@2040473-cj93593:~# cd Animals
+root@2040473-cj93593:~/Animals# cat > Pets
+dogs
+cats
+humsters
+root@2040473-cj93593:~/Animals# head Pets
+dogs
+cats
+humsters
+root@2040473-cj93593:~/Animals# cat > PackAnimals
+horses
+camels
+donkeys
+root@2040473-cj93593:~/Animals# head PackAnimals
+horses
+camels
+donkeys
+root@2040473-cj93593:~/Animals# cat Pets PackAnimals > AllAnimals
+root@2040473-cj93593:~/Animals# cat AllAnimals
+dogs
+cats
+humsters
+horses
+camels
+donkeys
+root@2040473-cj93593:~/Animals# mv AllAnimals HumanFriends
+root@2040473-cj93593:~/Animals# ^C
+root@2040473-cj93593:~/Animals# ls
+HumanFriends  PackAnimals  Pets
+
+2. Task: Работа с директориями в Linux
+   - Создать новую директорию и переместить туда файл "Human Friends".
+
+Commands:
+root@2040473-cj93593:~/Animals# cd ..
+root@2040473-cj93593:~# mkdir AnimalsNew
+root@2040473-cj93593:~# cd Animals
+root@2040473-cj93593:~/Animals# mv HumanFriends ~/AnimalsNew
+root@2040473-cj93593:~/Animals# ls
+PackAnimals  Pets
+root@2040473-cj93593:~/Animals# cd ~/AnimalsNew
+root@2040473-cj93593:~/AnimalsNew# ls
+HumanFriends
+root@2040473-cj93593:~/AnimalsNew# cat HumanFriends
+dogs
+cats
+humsters
+horses
+camels
+donkeys
+
+3. Task: Работа с MySQL в Linux. “Установить MySQL на вашу вычислительную машину ”
+   - Подключить дополнительный репозиторий MySQL и установить один из пакетов из этого репозитория.
+
+Commands:
+root@2040473-cj93593:~# root@2040473-cj93593:~# sudo apt update
+root@2040473-cj93593:~# apt install mysql-server
+root@2040473-cj93593:~# sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+root@2040473-cj93593:~# sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+root@2040473-cj93593:~# sudo apt-get update
+root@2040473-cj93593:~# sudo systemctl start mysql
+root@2040473-cj93593:~# mysql -u root -p
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.06 sec)
+
+
+4. Task: Управление deb-пакетами
+   - Установить и затем удалить deb-пакет, используя команду `dpkg`.
+
+Commands:
+root@2040473-cj93593:~# wget http://archive.ubuntu.com/ubuntu/pool/main/n/nano/nano_7.2-1_amd64.deb
+root@2040473-cj93593:~# sudo dpkg -i nano_7.2-1_amd64.deb
+root@2040473-cj93593:~# sudo dpkg -r nano
+
+
+
+
+
+
+
