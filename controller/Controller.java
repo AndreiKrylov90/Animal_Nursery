@@ -48,28 +48,33 @@ public class Controller {
     public void createDog(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createDog(animalRegistry, name, birthDate, commands);
     }
+
     public void createCat(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createCat(animalRegistry, name, birthDate, commands);
     }
+
     public void createHamster(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createHamster(animalRegistry, name, birthDate, commands);
     }
+
     public void createHorse(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createHorse(animalRegistry, name, birthDate, commands);
     }
+
     public void createCamel(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createCamel(animalRegistry, name, birthDate, commands);
     }
+
     public void createDonkey(AnimalRegistry animalRegistry, String name, LocalDate birthDate, String commands) {
         serviceImpl.createDonkey(animalRegistry, name, birthDate, commands);
     }
 
-    public String commandsOfAnimal(Animal animal) {
-        return serviceImpl.commandsOfAnimal(null);
+    public String getCommands(Animal animal) {
+        return animal.getCommands();
+
     }
 
-    public void newCommands(Animal animal, String newCommand) {
-        serviceImpl.newCommands(animal, newCommand);
+    public void setCommands(Animal animal, String commands) {
+        animal.setCommands(animal.getCommands() + ", " + commands);
     }
-
 }

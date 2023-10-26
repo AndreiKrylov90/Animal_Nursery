@@ -89,19 +89,22 @@ public class program {
                 System.out.println(animalRegistry);
                 System.out.println("Введите номер животного, команды которого вас интересуют: ");
                 int commandsChoice = scanner.nextInt();
-                String result = controller.commandsOfAnimal(animalRegistry.getAnimals().get(commandsChoice-1));
+                List<Animal> allAnimals = animalRegistry.getAnimals();
+                Animal choosenAnimal = allAnimals.get(commandsChoice-1);
+                String result = controller.getCommands(choosenAnimal);
                 System.out.println("Выполняемые команды: " + result);
                 break;
             case 3:
                 System.out.println(animalRegistry);
                 System.out.println("Введите номер животного, команды которого будем менять: ");
                 int newCommandsChoice = scanner.nextInt();
+                scanner.nextLine();
 
                 System.out.println("Введите команду, которую хотите добавить: ");
                 String newCommand = scanner.nextLine();
-                controller.newCommands(animalRegistry.getAnimals().get(newCommandsChoice-1), newCommand);
+                controller.setCommands(animalRegistry.getAnimals().get(newCommandsChoice-1), newCommand);
                 
-                String changedResult = controller.commandsOfAnimal(animalRegistry.getAnimals().get(newCommandsChoice-1));
+                String changedResult = controller.getCommands(animalRegistry.getAnimals().get(newCommandsChoice-1));
                 System.out.println("Новые выполняемые команды: " + changedResult);
                 break;
             case 4:
@@ -141,6 +144,7 @@ public class program {
         controller.createHorse(animalRegistry, "Blaze", LocalDate.of(2016, 02, 29), "Trot, Jump, Gallop");
         controller.createCamel(animalRegistry, "Sahara", LocalDate.of(2015, 8, 14), "Walk, Run");
         
+               
 
     }
 

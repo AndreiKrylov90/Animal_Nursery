@@ -24,11 +24,7 @@ public interface Service {
     public Hamster createHamster(AnimalRegistry animalRegistry);
     public Horse createHorse(AnimalRegistry animalRegistry);
     public Camel createCamel(AnimalRegistry animalRegistry);
-    public Donkey createDonkey(AnimalRegistry animalRegistry);
-
-    public String commandsOfAnimal(Animal animal);
-
-    public void newCommands(Animal animal, String newCommand);
+    public Donkey createDonkey(AnimalRegistry animalRegistry);  
      
     public void SortedAnimalRegistry(AnimalRegistry animalRegistry);
 

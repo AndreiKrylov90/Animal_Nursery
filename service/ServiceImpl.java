@@ -100,18 +100,6 @@ public class ServiceImpl implements Service{
     }
 
     @Override
-    public String commandsOfAnimal(Animal animal) {
-        return animal.getCommands();
-    }
-
-    @Override
-    public void newCommands(Animal animal, String newCommand) {
-        String newCommands = animal.getCommands() + newCommand;
-        animal.setCommands(newCommands); 
-
-    }
-
-    @Override
     public void SortedAnimalRegistry(AnimalRegistry animalRegistry) {
         Comparator<Animal> birthDateComparator = Comparator.comparing(Animal::getBirthDate);
         Collections.sort(animalRegistry.getAnimals(), birthDateComparator);
