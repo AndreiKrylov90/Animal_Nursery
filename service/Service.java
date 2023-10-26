@@ -2,7 +2,6 @@ package service;
 
 import java.time.LocalDate;
 
-import model.Animal;
 import model.AnimalRegistry;
 import model.Camel;
 import model.Cat;
